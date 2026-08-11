@@ -4,7 +4,7 @@ def call(String imageName) {
 
     withCredentials([
         usernamePassword(
-            credentialsId: 'saifdockerhub',
+            credentialsId: 'dockerhub-test',
             passwordVariable: 'PASSWORD',
             usernameVariable: 'USERNAME'
         )
