@@ -1,4 +1,4 @@
-def call() {
+def call(string imageName) {
     echo "building docker image..."
 
     withCredentials([
@@ -8,8 +8,8 @@ def call() {
             usernameVariable: 'USERNAME'
                         )
     ]) {
-        sh 'docker build -t saljuboori/demo-app:jma-3.0 .'
+        sh "docker build -t $imageName ."
         sh 'echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin'
-        sh 'docker push saljuboori/demo-app:jma-3.0'
+        sh "docker push $imageName"
    }
 }
