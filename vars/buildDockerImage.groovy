@@ -1,4 +1,3 @@
-
 def call(String imageName) {
     echo "building docker image..."
 
@@ -16,4 +15,3 @@ def call(String imageName) {
         sh "docker push $imageName"
     }
 }
-
