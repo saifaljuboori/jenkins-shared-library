@@ -9,8 +9,6 @@ def call(String imageName) {
         )
     ]) {
         sh "docker build -t $imageName ."
-
-        sh 'docker logout'
         sh 'echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin'
         sh "docker push $imageName"
     }
