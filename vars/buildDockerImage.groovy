@@ -17,4 +17,5 @@ withCredentials([
     sh 'docker info 2>/dev/null | grep Username || true'
 
     sh "docker push $imageName"
-}
+  }
+}    
