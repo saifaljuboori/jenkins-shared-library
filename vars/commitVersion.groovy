@@ -3,7 +3,7 @@ def call() {
 
     withCredentials([
         usernamePassword(
-            credentialsId: 'github',
+            credentialsId: 'github-credentials',
             usernameVariable: 'USERNAME',
             passwordVariable: 'PASSWORD'
         )
