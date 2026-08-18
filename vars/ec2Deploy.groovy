@@ -3,7 +3,7 @@ def call() {
 
     def ec2Server = 'ec2-user@3.90.251.184'
     def dockerCmd = "docker run -d -p 8080:8080 ${env.IMAGE_NAME}"
-    sshagent(credentials: ['ec2-server-key'], executable: '') {
+    sshagent(credentials: ['ec2-server-key']) {
         sh "ssh -o StrictHostKeyChecking=no ${ec2Server} ${dockerCmd}"
     }
 }
